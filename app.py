@@ -333,9 +333,9 @@ class TeamFightEnv(gym.Env):
                     reward += 10.0
 
         if all(u.state == UnitState.DEAD for u in self._enemy_units()):
-            reward += 100.0
+            reward += 1000.0
         if all(u.state == UnitState.DEAD for u in self._ally_units()):
-            reward -= 100.0
+            reward -= 1000.0
 
         self.prev_hp = curr_hp.copy()
         return reward
