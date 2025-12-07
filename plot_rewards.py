@@ -39,10 +39,6 @@ def load_episode_rewards(log_dir):
 def plot_episode_rewards():
     episodes, rewards = load_episode_rewards(LOG_DIR)
 
-    mask = episodes <= 350
-    episodes = episodes[mask]
-    rewards = rewards[mask]
-
     plt.figure(figsize=(12, 6))
 
     # ① 모든 에피소드 점(산점도)
